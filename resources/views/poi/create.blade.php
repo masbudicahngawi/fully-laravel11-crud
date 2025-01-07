@@ -3,7 +3,7 @@
 	<table>
 		<tr>
 			<td>Nama</td>
-			<td><input type="text" name="nama"></td>
+			<td><input type="text" name="nama" value="{{ old('nama') }}"></td>
 		</tr>
 		<tr>
 			<td>Area</td>
@@ -11,7 +11,7 @@
 				<select name="area_id">
 					<option>==Pilih Area==</option>
 					@foreach($data as $i)
-					<option value="{{ $i->id }}">{{ $i->nama }}</option>
+					<option value="{{ $i->id }}" {{ old('area_id') == $i->id ? 'selected' : ''}}>{{ $i->nama }}</option>
 					@endforeach
 				</select>
 			</td>
@@ -19,7 +19,7 @@
 		<tr>
 			<td>Deskripsi</td>
 			<td>
-				<textarea rows="5" name="deskripsi"></textarea>
+				<textarea rows="5" name="deskripsi">{{ old('deskripsi') }}</textarea>
 			</td>
 		</tr>
 		<tr>

@@ -61,7 +61,7 @@ class PoiController extends Controller
         {
             $data = \DB::table("areas")
             ->join("pois", "areas.id", "=", "pois.area_id")
-            ->select("areas.nama as kabkota", "pois.nama", "pois.deskripsi")
+            ->select("areas.nama as kabkota", "pois.id", "pois.nama", "pois.deskripsi")
             ->orderBy("areas.id")
             ->get();
 
@@ -73,7 +73,7 @@ class PoiController extends Controller
      */
         public function edit(string $id)
         {
-            return "Anda akan mengedit data dengan ID : ".$id."?";
+            return "Anda akan mengedit data dengan PoI dengan ID : ".$id."?";
         }
 
         /**
